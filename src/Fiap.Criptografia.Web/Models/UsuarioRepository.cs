@@ -34,8 +34,16 @@ namespace Fiap.Criptografia.Web.Models
         {
             var usuarios = ObterUsuarios();
 
-            if (usuarios == null)
+            if (usuarios != null)
+            {
+                var maxId = usuarios.Max(p => p.Id);
+                usuario.Id = maxId + 1;
+            }
+            else
+            {
                 usuarios = new List<Usuario>();
+                usuario.Id = 1;
+            }
 
             usuarios.Add(usuario);
 

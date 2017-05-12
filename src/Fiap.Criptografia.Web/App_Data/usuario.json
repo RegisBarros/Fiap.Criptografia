@@ -1,14 +1,14 @@
 [
   {
+    "Id": 1,
     "Nome": "jack",
-    "Senha": "123456"
+    "Senha": "2184",
+    "Salt": null
   },
   {
-    "Nome": "regis",
-    "Senha": "123"
-  },
-  {
-    "Nome": "maria",
-    "Senha": "123"
+    "Id": 2,
+    "Nome": "skip",
+    "Senha": "2184",
+    "Salt": null
   }
 ]
