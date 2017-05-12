@@ -1,0 +1,34 @@
+﻿@model Fiap.Criptografia.Web.Models.Usuario
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form action="/cadastro" method="post" class="form-horizontal" role="form">
+    <h4>Crie uma nova conta</h4>
+    <hr />
+    <div class="form-group">
+        <label class="col-md-2 control-label">Usuario:</label>
+        <div class="col-md-10">
+            <input type="text" name="nome" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Senha:</label>
+        <div class="col-md-10">
+            <input type="password" name="senha" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Cadastrar" />
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
