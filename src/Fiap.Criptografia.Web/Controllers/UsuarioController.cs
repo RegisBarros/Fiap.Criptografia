@@ -17,7 +17,7 @@ namespace Fiap.Criptografia.Web.Controllers
             var usuarioRepository = new UsuarioRepository();
             usuarioRepository.Registrar(usuario);
 
-            return Redirect("cadastro");
+            return Redirect("/");
         }
     }
 }
