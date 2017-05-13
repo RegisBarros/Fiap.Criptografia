@@ -12,8 +12,11 @@ namespace Fiap.Criptografia.Web.Controllers
         }
 
         [HttpPost, Route("cadastro")]
-        public ActionResult Cadastro(Usuario usuario)
+        public ActionResult Cadastro(string nome, string senha)
         {
+            var usuario = new Usuario(nome);
+            usuario.DefinirSenha(senha);
+
             var usuarioRepository = new UsuarioRepository();
             usuarioRepository.Registrar(usuario);
 

@@ -10,14 +10,14 @@ namespace Fiap.Criptografia.Web.Models
     {
         private string _filePath = HostingEnvironment.MapPath(@"~/App_Data/usuario.json");
 
-        internal Usuario ObterUsuario(string nome, string senha)
+        internal Usuario ObterUsuario(string nome)
         {
             var usuarios = ObterUsuarios();
 
             if (usuarios == null)
                 return null;
 
-            return usuarios.FirstOrDefault(u => u.Nome == nome && u.Senha == senha);
+            return usuarios.FirstOrDefault(u => u.Nome == nome);
         }
 
 
@@ -34,16 +34,8 @@ namespace Fiap.Criptografia.Web.Models
         {
             var usuarios = ObterUsuarios();
 
-            if (usuarios != null)
-            {
-                var maxId = usuarios.Max(p => p.Id);
-                usuario.Id = maxId + 1;
-            }
-            else
-            {
+            if (usuarios == null)
                 usuarios = new List<Usuario>();
-                usuario.Id = 1;
-            }
 
             usuarios.Add(usuario);
 
